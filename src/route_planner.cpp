@@ -67,9 +67,9 @@ bool Compare(const RouteModel::Node *node1, const RouteModel::Node *node2) {
   
 } 
   
-void RoutePlanner::CellSort(std::vector<RouteModel::Node*> openlist){
+void RoutePlanner::CellSort(std::vector<RouteModel::Node*> *openlist){
  
-  std::sort(openlist.begin(), openlist.end(), Compare);
+  std::sort(openlist->begin(), openlist->end(), Compare);
   return;
   
 }
@@ -77,7 +77,7 @@ void RoutePlanner::CellSort(std::vector<RouteModel::Node*> openlist){
 RouteModel::Node *RoutePlanner::NextNode() {
   
   
-  RoutePlanner::CellSort(open_list);
+  RoutePlanner::CellSort(&open_list);
   RouteModel::Node *lowest_fval_node = open_list.front();
   open_list.erase(open_list.begin());
   return lowest_fval_node;	

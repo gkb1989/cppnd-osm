@@ -23,7 +23,7 @@ class RoutePlanner {
   //additional declarations for Compare and CellSort
   //bool Compare(RouteModel::Node const *node1, RouteModel::Node const *node2);
   
-  void CellSort(std::vector<RouteModel::Node*> openlist);
+  void CellSort(std::vector<RouteModel::Node*> *openlist);
 
   private:
     // Add private variables or methods declarations here.
